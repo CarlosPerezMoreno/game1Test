@@ -8,8 +8,10 @@ var block = document.getElementById("block");
 /*TO DO*/
 
 /* Create a function for that when user press Space, the character jumps */
+/* MR CARLOS, 21st November : I've created the function inside the document.addEventListener to handle the user's actions. When user press any key, the function is triggered and I pass
+the event as a parameter. Now continue and complete it */
 document.addEventListener("keydown", function(event) {
-    /* Create the algorithm */
+    /* Create the algorithm here */
 });
 
 function jump(){
