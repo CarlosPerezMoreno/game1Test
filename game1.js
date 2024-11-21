@@ -1,9 +1,16 @@
 /*Create variable for character that getsElement from HTML */
+var character = document.getElementById("character");
+
 /*Create variable for the block that getsElement from HTML */
+var block = document.getElementById("block");
+
 /*Create variable for score countering */
+/*TO DO*/
 
 /* Create a function for that when user press Space, the character jumps */
-
+document.addEventListener("keydown", function(event) {
+    /* Create the algorithm */
+});
 
 function jump(){
     if(character.classList == "animate") {
