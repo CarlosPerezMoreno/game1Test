@@ -1,18 +1,14 @@
-/*Create variable for character that getsElement from HTML */
 var character = document.getElementById("character");
-
-/*Create variable for the block that getsElement from HTML */
 var block = document.getElementById("block");
+var counter=0;
 
-/*Create variable for score countering */
-/*TO DO*/
-
-/* Create a function for that when user press Space, the character jumps */
-/* MR CARLOS, 21st November : I've created the function inside the document.addEventListener to handle the user's actions. When user press any key, the function is triggered and I pass
-the event as a parameter. Now continue and complete it */
+// MR CARLOS 3rd December, added the function for controlling the jump of the character when user presses Space
 document.addEventListener("keydown", function(event) {
-    /* Create the algorithm here */
+    if (event.code === "Space") {
+        jump();
+    }
 });
+
 
 function jump(){
     if(character.classList == "animate") {
@@ -23,12 +19,22 @@ function jump(){
         character.classList.remove("animate");
     },300);
 }
+
+//MR CARLOS This is the function that, create two variables to check the position of the character and block on screen,
+// check if position is the same (collision), if yes, ends the game and block the animation, and restart it
+// if there is no collision it means that the user could jump over it, so we add 1 point to the counter and modify the scoreSpan
 setInterval(function checkDeat() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if(blockLeft<20 && blockLeft>-20 && characterTop>=160){
-		/* Change animation in CSS, create an alert that displays "Game Over + the score" and reset score to 0"
+	//MR CARLOS, animated the character when there is a collision between character and block.
+        block.style.animation = "none";
+        alert("Game Over. score: "+Math.floor(counter/100));
+        counter=0;
+        block.style.animation = "block 1s infinite linear";
     }else{
-        /* Add one point to the score counter */
+	//mr carlos, adding points to the counter
+        counter++;
+        document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
 }, 10);
