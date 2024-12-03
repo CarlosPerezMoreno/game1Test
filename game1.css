@@ -14,8 +14,8 @@
 #character{
     width: 20px;
     height: 50px;
-    /* Use direct URL */
-    /* Scale the image to fit the element */
+    background-image: /* MR CARLOS 3rd December : pick the url of the image that you would like to use for the character*/
+    background-size: 100% 100%; /* Scale the image to fit the element */
     background-position: center;
     position: relative;
     top: 160px;
@@ -34,8 +34,8 @@
 #block{
     width: 20px;
     height: 20px;
-    /* Use direct URL */
-    /* Scale the image to fit the element */
+    background-image: /* MR CARLOS 3rd December : pick the url of the image that you would like to use for the block*/
+    background-size: 100% 100%; /* Scale the image to fit the element */
     background-position: center;
     position: relative;
     position: relative;
